@@ -12,7 +12,6 @@ document.querySelector('.content').addEventListener('click', () => {
     }
 });
 
-
 // --- 2. CONFIGURATION & DATA ---
 
 const images = [
@@ -23,8 +22,7 @@ const images = [
     'images/img5.png'   
 ];
 
-
-// --- 3. AUTO SLIDER (Container 1) ---
+// --- 3. AUTO SLIDER ---
 let autoIndex = 0;
 const autoImgElement = document.getElementById('autoSlider');
 
@@ -35,8 +33,7 @@ function startAutoSlider() {
 
 setInterval(startAutoSlider, 2000);
 
-
-// --- 4. MANUAL SLIDER (Container 3) & INTERACTIVE SLIDER (Container 6) ---
+// --- 4. MANUAL SLIDER ---
 let sliderIndices = {
     'manual': 0,
     'interactive': 0
@@ -60,7 +57,7 @@ function changeSlide(type, direction) {
     imgElement.src = images[sliderIndices[type]];
 }
 
-// Function to handle Manual and Interactive sliders
+// 5. Interactive sliders
 function changeSlide(type, direction) {
     let imgElement;
     
@@ -70,28 +67,18 @@ function changeSlide(type, direction) {
         imgElement = document.getElementById('interactiveSlider');
     }
 
-    // 1. Update Index
     sliderIndices[type] += direction;
 
-    // 2. Loop Logic
     if (sliderIndices[type] >= images.length) {
         sliderIndices[type] = 0;
     } else if (sliderIndices[type] < 0) {
         sliderIndices[type] = images.length - 1;
     }
 
-    // 3. Change Image Source
     imgElement.src = images[sliderIndices[type]];
-
-    // --- ANIMATION LOGIC FOR INTERACTIVE SLIDER ---
     if (type === 'interactive') {
-        // A. Remove the class
         imgElement.classList.remove('animate-pop');
-        
-        // B. Trigger Reflow (This magic line forces browser to restart animation)
         void imgElement.offsetWidth; 
-        
-        // C. Add the class back
         imgElement.classList.add('animate-pop');
     }
 }
