@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap - Frontend Task</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <header class="header">
+    <i class="fa-solid fa-bars" id="hamburger-btn"></i>
+    <span class="brand">SkillSwap</span>
+    <div class="header-right">
+        Platform to Learn & Share
+    </div>
+</header>
+
+    <div class="wrapper">
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-house"></i> <span class="text">Home</span></a></li>
+                <li><a href="#"><i class="fa-solid fa-user-group"></i> <span class="text">Peers</span></a></li>
+                <li><a href="#"><i class="fa-solid fa-link"></i> <span class="text">Connect</span></a></li>
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> <span class="text">Sign Out</span></a></li>
+            </ul>
+        </aside>
+
+        <section class="content">
+            <div class="container c6">
+                <div class="slider-controls">
+                    <button class="arrow" onclick="changeSlide('interactive', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <img id="interactiveSlider" alt="Interactive Slider">
+                    <button class="arrow" onclick="changeSlide('interactive', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <p class="caption">Interactive Showcase</p>
+            </div>
+
+            <div class="container c2">
+                <div class="decorative-box">
+                    <h3>What is SkillSwap?</h3>
+                    <p>SkillSwap is a peer-to-peer learning platform.
+                    <br><span>Exchange Skills. Collaborate. Grow.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="container c1">
+                <div class="slider-wrapper">
+                    <img id="autoSlider" alt="Auto Slider">
+                </div>
+                <p class="caption">Skills Showcase</p>
+            </div>
+
+            <div class="container c4">
+                <div class="static-content">
+                    <img src="images/logo.png" alt="SkillSwap Logo" class="logo-small">
+                    <div class="text-side">
+                    <h4><i class="fa-solid fa-rocket"></i> Why Choose Us?</h4>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Learn by teaching</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Connect with peers</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Completely free</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container c6">
+                <div class="slider-controls">
+                    <button class="arrow" onclick="changeSlide('manual', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <img id="manualSlider" alt="Manual Slider">
+                    <button class="arrow" onclick="changeSlide('manual', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <p class="caption">Manual Slider</p>
+            </div>
+
+            <div class="container c5">
+                <h3>Get Started</h3>
+                <div class="btn-group">
+                    <button class="b1">Explore More</button>
+                    <button class="b2">Connect Peers</button>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
